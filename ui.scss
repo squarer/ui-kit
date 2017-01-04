@@ -100,10 +100,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 72px;
-  height: $header-min-height;
-  outline: none;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
+  margin: 8px 12px;
 }
 
 .ui-drawer {
@@ -139,7 +139,7 @@ body {
   }
 
   & .ui-link {
-    line-height: 1;
+    line-height: 24px;
     padding: 16px 40px;
     color: #757575;
 
