@@ -55,6 +55,7 @@ body {
   margin: 0;
   padding: 0;
   @include block-shadow();
+  z-index: 2;
 }
 
 .ui-row {
@@ -166,4 +167,30 @@ body {
     visibility: visible;
     opacity: 1;
   }
+}
+
+.main {
+  min-height: 1000px;
+  padding: 40px;
+}
+
+.ui-card {
+  background-color: #fff;
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 2px;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 18px;
+  color: #757575;
+}
+
+.light-shadow {
+  @include block-shadow();
+}
+
+.heavy-shadow {
+  @include drawer-shadow();
 }
