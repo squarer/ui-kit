@@ -242,3 +242,46 @@ h3 {
     }
   }
 }
+
+.ui-button {
+  background: rgba(158,158,158,.2);
+  border-radius: 2px;
+  padding: 0 16px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+
+  &.active {
+    @include drawer-shadow();
+  }
+}
+
+.ui-button-raised {
+  @include block-shadow();
+}
+
+.ui-button-colored {
+  color: #fff;
+  background-color: $header-bg-color;
+}
+
+.ui-button-round {
+  border-radius: 50%;
+  font-size: 24px;
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  padding: 0;
+
+  .material-icons {
+    position: absolute;
+    transform:translate(-50%, -50%);
+  }
+}
