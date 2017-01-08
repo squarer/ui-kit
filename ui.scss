@@ -2,6 +2,12 @@ $header-bg-color: #2196F3;
 $header-color: #fff;
 $header-min-height: 64px;
 $drawer-width: 240px;
+$desktop-breakpoint: 840px;
+$tablet-breakpoint: 480px;
+$grid-desktop-max-columns: 12;
+$grid-tablet-max-columns: 8;
+$grid-phone-max-columns: 4;
+$content-width: 960px;
 
 @mixin block-shadow() {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12)
@@ -169,9 +175,15 @@ body {
   }
 }
 
-.main {
+.ui-main {
+  margin: 0 auto;
+  max-width: $content-width;
   min-height: 1000px;
   padding: 40px;
+}
+
+.section {
+  margin-bottom: 120px;
 }
 
 .ui-card {
@@ -193,4 +205,40 @@ h3 {
 
 .heavy-shadow {
   @include drawer-shadow();
+}
+
+.ui-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &.fill {
+    flex-wrap: nowrap;
+  }
+}
+
+.ui-cell {
+  flex-basis: 100%;
+}
+
+@for $i from 1 through $grid-desktop-max-columns {
+  .ui-cell-#{$i}-col {
+    width: percentage(1 / $grid-desktop-max-columns * $i);
+  }
+}
+
+@media (min-width: $tablet-breakpoint) and (max-width: $desktop-breakpoint - 1) {
+  @for $i from 1 through $grid-tablet-max-columns {
+    .ui-cell-#{$i}-col {
+      width: percentage(1 / $grid-tablet-max-columns * $i);
+    }
+  }
+}
+
+@media (max-width: $tablet-breakpoint - 1) {
+  @for $i from 1 through $grid-phone-max-columns {
+    .ui-cell-#{$i}-col {
+      width: percentage(1 / $grid-phone-max-columns * $i);
+    }
+  }
 }
