@@ -4,14 +4,16 @@
   "description": "a practice of front-end ui kit",
   "main": "ui.js",
   "scripts": {
+    "build": "gulp",
+    "dev": "gulp dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/squarer/ui-kit.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "squarer",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/squarer/ui-kit/issues"
   },
